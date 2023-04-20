@@ -65,7 +65,6 @@ public class CheckAccordion {
 
     @After
     public void teardown() {
-        // Закрой браузер
         driver.quit();
     }
 }
