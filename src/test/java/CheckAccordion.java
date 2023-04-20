@@ -1,5 +1,6 @@
 import PageObject.Accordion;
 import PageObject.Landing;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -60,7 +61,11 @@ public class CheckAccordion {
         objAccordion.clickButton(panelNumber);
         String actual = objAccordion.givAnswer(panelNumber);
         assertEquals("Ответ в аккордионе не соответствует ожидаемому на кнопке №" + panelNumber, answer, actual);
+    }
 
+    @After
+    public void teardown() {
+        // Закрой браузер
         driver.quit();
     }
 }

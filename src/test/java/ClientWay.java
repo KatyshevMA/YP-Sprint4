@@ -1,4 +1,5 @@
 import PageObject.*;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,8 +46,8 @@ public class ClientWay {
 
     @Test
     public void checkClientWay() {
-        //WebDriver driver = new FirefoxDriver();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new FirefoxDriver();
+        //WebDriver driver = new ChromeDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
         //Клик по кнопке Заказать
@@ -80,8 +81,14 @@ public class ClientWay {
         objSuccesOrder.checkSeeStatusButton();
 
         //Проверить что появился блок со статусом заказа
-        Assert.assertEquals(true, objSuccesOrder.checkStatus());
+        Assert.assertTrue(objSuccesOrder.checkStatus());
 
+    }
+
+    @After
+    public void teardown() {
+        // Закрой браузер
         driver.quit();
     }
+
 }
