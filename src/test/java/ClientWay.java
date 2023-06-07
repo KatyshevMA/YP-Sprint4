@@ -46,8 +46,8 @@ public class ClientWay {
 
     @Test
     public void checkClientWay() {
-        //WebDriver driver = new FirefoxDriver();
-        WebDriver driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
 
         //Клик по кнопке Заказать
